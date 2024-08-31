@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+body {
+    font-family: 'Luckiest Guy', cursive;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #1a1a1a, #000000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    background: #0d0d0d;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+    border: 3px solid #333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #e6e6e6;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    animation: pulseTitle 2s infinite;
+}
+
+@keyframes pulseTitle {
+    0% {
+        color: #ffcc00;
+    }
+    50% {
+        color: #ff9900;
+    }
+    100% {
+        color: #ffcc00;
+    }
+}
+
+p {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #bfbfbf;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    transition: color 0.3s ease-in-out;
+}
+
+.options p {
+    background: linear-gradient(135deg, #262626, #404040);
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 15px 0;
+    font-size: 18px;
+    color: #e6e6e6;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.options p:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #404040, #595959);
+}
+
+.options p:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #333333, #4d4d4d);
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff3300, 0 0 30px #ff3300, 0 0 40px #ff3300;
+    }
+}
+
+@keyframes fadeInAnswer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Correct Answer Style */
+.correct {
+    color: #00cc00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    animation: correctGlow 1s infinite alternate;
+}
+
+@keyframes correctGlow {
+    0% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    100% {
+        text-shadow: 0 0 20px #33ff33, 0 0 30px #33ff33, 0 0 40px #33ff33;
+    }
+}
+
+/* Wrong Answer Style */
+.wrong {
+    color: #ff3333;
+    text-shadow: 0 0 10px #ff3333, 0 0 20px #ff3333, 0 0 30px #ff3333;
+    animation: wrongShake 0.3s ease-in-out 5;
+}
+
+@keyframes wrongShake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 25px;
+        animation: none;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .answer {
+        font-size: 20px;
+    }
+
+    .options p {
+        padding: 10px;
+    }
+}
